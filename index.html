@@ -5,34 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <style>
+        section{
+        border: 1px solid #ddd;
+        padding: 15px;
+        margin: 20px 100px;
+        box-shadow: 0 0 5px #aaa;
+        }
+    </style>
+
 </head>
 <body>
+    <section>
     <h2> formulir pendaftaran</h2>
     <form id="form1">
         <label for="nama">nama:</label>
         <input type="type" id="nama" name="nama"/>
         <button type="button" onclick="tampilanPesan()">submit</button>
     </form>
-
     <h2>Hitung Usia Anda</h2>
     <label for="tahunLahir">Tahun Lahir:</label>
     <input type="number" id="tahunLahir" />
     <button type="button" onclick="hitungUsia()">Hitung</button>
     <p id="hasil"></p>
+    </section>
 
+    <section>
     <h2>Manipulasi DOM</h2>
     <p id="paragraf">arya mewing.</p>
     <button onclick="ubahTeks()">Ubah Teks</button>
     <button onclick="ubahwarna()">Ubah Warna</button>
+    </section>
 
-    
+    <section>
+    <h2>Spongebob</h2>
+    <img
+      id="gambar"
+      src="thh.jpg"
+      width="200"
+      onclick="gantigambar()"/>
+    </section>
+
+    <section>
+    <h2>Kalkulator</h2>
+    <input type="text" id="angka1" placeholder="Angka 1"/>
+    <input type="number" id="angka2" placeholder="Angka 2"/>
+    <select id="operator">
+        <option value="+">Tambah</option>
+        <option value="-">Kurang</option>
+        <option value="*">kali</option>
+        <option value="/">bagi</option>
+    </select>
+    <button onclick="hitung()">hitung</button>
+    <p id="hasilKalkulator"></p>
+    </section>
+
     <script>
         function ubahTeks() {
             document.getElementById("paragraf").innerText = 
             "Nata sigma";
         }
         function ubahwarna() {
-            document.getElementById("paragraf").style.color="yellow";
+            document.getElementById("paragraf").style.color="green";
         }
         function hitungUsia() {
             var tahunLahir = document.getElementById("tahunLahir").value;
@@ -43,19 +77,36 @@
             }
         function gantigambar() {
             var img = document.getElementById("gambar");
-            if (
-                img.src.includes(
-                    "https://images.search.yahoo.com/images/view;_ylt=AwrOo_Bl0yFnl7Q59mqJzbkF;_ylu=c2VjA3NyBHNsawNpbWcEb2lkA2QwMGRiOGE4MGFjZDQzMmRlZDE2Mzc2YmU0NWE0MjhhBGdwb3MDMTMEaXQDYmluZw--?back=https%3A%2F%2Fimages.search.yahoo.com%2Fsearch%2Fimages%3Fp%3Dkurus%26ei%3DUTF-8%26type%3DE211US714G0%26fr%3Dmcafee%26fr2%3Dp%253As%252Cv%253Ai%252Cm%253Asb-top%26tab%3Dorganic%26ri%3D13&w=1024&h=341&imgurl=1.bp.blogspot.com%2F-8qmCZ5CqoNc%2FXW7GkgEoshI%2FAAAAAAAAB7I%2FkPkoac1Gh74gIg9ycBbqVsnZ6yz90EyWwCLcBGAs%2Fs1600%2Fkurus_talkfeed-1024x341.jpg&rurl=https%3A%2F%2Fbundasehat44.blogspot.com%2F2019%2F09%2Fcara-menambah-berat-badan-buat-yang.html&size=43KB&p=kurus&oid=d00db8a80acd432ded16376be45a428a&fr2=p%3As%2Cv%3Ai%2Cm%3Asb-top&fr=mcafee&tt=Cara+Menambah+Berat+Badan+Buat+yang+Kurus+Kering%2C+No+2+Bikin+Kamu+Senang+-+BUNDA+SEHAT4&b=0&ni=90&no=13&ts=&tab=organic&sigr=8YiQYFZFIWwK&sigb=mx.ps1.4dFLR&sigi=zUz_gswROTqO&sigt=W.QR9TRfclRt&.crumb=MG7Yr01tIdp&fr=mcafee&fr2=p%3As%2Cv%3Ai%2Cm%3Asb-top&type=E211US714G0"
-                )
-            ){
-                img.src =
-                "https://images.search.yahoo.com/images/view;_ylt=AwrjJyi10yFn4Nk5h2KJzbkF;_ylu=c2VjA3NyBHNsawNpbWcEb2lkA2QxMjM1YTcyNmY0MjAxNTUyMTM3NTIzYTA4MjdhMmUyBGdwb3MDMQRpdANiaW5n?back=https%3A%2F%2Fimages.search.yahoo.com%2Fsearch%2Fimages%3Fp%3Dideal%2Bbody%26ei%3DUTF-8%26type%3DE211US714G0%26fr%3Dmcafee%26fr2%3Dp%253As%252Cv%253Ai%252Cm%253Asb-top%26tab%3Dorganic%26ri%3D1&w=960&h=540&imgurl=www.bodybuilding.com%2Fimages%2F2021%2Fjuly%2FIdeal-Body-Calculator-header-960x540.jpg&rurl=https%3A%2F%2Fnyfitnessbuzz.com%2F2021%2F07%2F09%2Fideal-body-measurements-calculator-for-aesthetics%2F&size=29KB&p=ideal+body&oid=d1235a726f4201552137523a0827a2e2&fr2=p%3As%2Cv%3Ai%2Cm%3Asb-top&fr=mcafee&tt=Ideal+Body+Measurements+Calculator+for+Aesthetics+-+NY+Fitness+Buzz&b=0&ni=90&no=1&ts=&tab=organic&sigr=VgGBWlku.1lo&sigb=Q1XpzsIwvCee&sigi=HOMbOUf51cFz&sigt=nRq2DITL8HWa&.crumb=MG7Yr01tIdp&fr=mcafee&fr2=p%3As%2Cv%3Ai%2Cm%3Asb-top&type=E211US714G0"
+            if (img.src.includes("th.jpg"))
+            {
+                img.src ="thh.jpg"
             } else {
-                img.src=
-                "https://images.search.yahoo.com/images/view;_ylt=AwrjJyjs0yFncbQ51ZSJzbkF;_ylu=c2VjA3NyBHNsawNpbWcEb2lkAzdmOTM3NGUwNjFlZmUzZDdmM2U3M2M3NzNmMTg2ZDM1BGdwb3MDMTAEaXQDYmluZw--?back=https%3A%2F%2Fimages.search.yahoo.com%2Fsearch%2Fimages%3Fp%3Dgendut%2Bbody%2Bman%26ei%3DUTF-8%26type%3DE211US714G0%26fr%3Dmcafee%26fr2%3Dp%253As%252Cv%253Ai%252Cm%253Asb-top%26tab%3Dorganic%26ri%3D10&w=600&h=401&imgurl=dl.kaskus.id%2Fmedia.indiatimes.in%2Fmedia%2Fcontent%2F2015%2FJun%2Ffat-guy_1434626904.jpg&rurl=https%3A%2F%2Fwww.kaskus.co.id%2Fthread%2F57c33377ddd770d34c8b4568%2Forang-gendut-yang-pengen-kurus-itu-alay-gan&size=89KB&p=gendut+body+man&oid=7f9374e061efe3d7f3e73c773f186d35&fr2=p%3As%2Cv%3Ai%2Cm%3Asb-top&fr=mcafee&tt=Orang+Gendut+Yang+Pengen+Kurus+Itu+Alay+Gan+%21+%7C+KASKUS&b=0&ni=90&no=10&ts=&tab=organic&sigr=df70Y_Oal3IP&sigb=YOTAxrdFXPh0&sigi=bFPQonDE9Oyy&sigt=SGGZe2Zi_fcQ&.crumb=MG7Yr01tIdp&fr=mcafee&fr2=p%3As%2Cv%3Ai%2Cm%3Asb-top&type=E211US714G0"
+                img.src="th.jpg"
             }
         }
-        
+
+    function hitung(){
+        var angka1 = parseFloat(document.getElementById("angka1").value);
+        var angka2 = parseFloat(document.getElementById("angka2").value);
+        var operator = document.getElementById("operator").value;
+        var hasil;
+        switch(operator){
+            case "+":
+                hasil = angka1 + angka2;
+                break
+            case "-":
+                hasil = angka1 - angka2;
+                break
+            case "*":
+                hasil = angka1 * angka2;
+                break
+            case "/":
+                hasil = angka1 / angka2;
+                break
+        }
+        document.getElementById("hasilKalkulator").innerText =
+            "Hasil :" + hasil;
+    }
     </script>
 </body>
 </html>
